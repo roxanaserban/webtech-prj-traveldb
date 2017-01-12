@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <style>
+ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 0;
+    width: 400px;
+    height: 100px;
+    background-color:purple;
+}
+
+li a {
+    display: block;
+    color: #DC143C;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 2px 10px;
+    margin: 8px 0;
+    border: 2px solid black;
+    border-radius: 14px;
+}
+
+.button1 {
+    background-color: white;
+    border: none;
+    color: #ff00ff;
+    padding: 10px 24px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 1px;
+}
+h1{
+ color:pink;
+}
+h2{
+    color:yellow;
+}
+</style> 
+       
+    </head>
+    <body ng-app="myApp" 
+    background="https://cdn.notonthehighstreet.com/system/product_images/images/001/628/027/original_inspirational-quote-travel-journal.jpg" >
+        <!-- Jquery JS file -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        
+        <!-- Bootstrap JS file -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/controllers/script-controller.js"></script>
+        
+        
+         <h1 id="titlu" display="inline-block"><marquee>Welcome to travel journal</marquee></h1>
+        <div class="container">
+            <h2>Ce sa vizitezi in Europa ? </h2>
+            <div class="row">
+                <div ng-controller="PhotoController">
+                </div>
+            <div class="col-md-3">
+                <ul class="nav nav-stacked">
+                    <li><a href="#/home">Home</a></li>
+                    <li><a href="#/orase">Orase care merita vizitate</a></li>
+                    <li><a href="poze">Galerie foto</a></li>
+                    <li><a href="#/tari">Tari</a></li>
+                    <li><a href="/bd/">TravelDB</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div ui-view></div>
+            </div>
+        <div>
+        </div>
+        <div class="container">
+    
+  <!-- <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <button class="button1 data-toggle="modal" data-target="#add_new_record_modal">Adauga</button>
+            </div>
+        </div>
+    </div>
+ -->
+
+      <form id="record_form">
+                    <input type="hidden" name="id" id="id" />
+                    <div class="form-group">
+                        <label for="denumire">Denumire oras</label>
+                        <input type="text" name="denumire" id="denumire" placeholder="Denumire" class="form-control"/>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="populatie">Populatia orasului</label>
+                        <input type="text" name="populatie" id="populatie" placeholder="Populatia" rows="5" class="form-control"/>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="temperatura">Temperatura medie</label>
+                        <input name="temperatura" type="text" id="temperatura" placeholder="temperatura" class="form-control"/>
+                    </div>
+    
+                </form>
+                </br>
+                <div class="modal-footer">
+                <button type="button" class="button" id="button1"  onclick="saveRecord()">Adauga oras</button>
+                <button class="button" type="button" class="btn btn-default" data-dismiss="modal">Sterge oras</button>
+               
+            </div>
+    </body>
+    
+    
+</html>
+
+
+
+
+
+
+
